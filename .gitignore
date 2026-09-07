@@ -6,3 +6,11 @@ logs/
 screenshots/
 target/
 *.txt
+# Deliberate public evidence: approved formats only
+/public-evidence/**
+!/public-evidence/
+!/public-evidence/logs/
+!/public-evidence/logs/*.txt
+!/public-evidence/logs/*.log
+!/public-evidence/screenshots/
+!/public-evidence/screenshots/*.png
