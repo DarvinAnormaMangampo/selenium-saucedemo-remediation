@@ -102,3 +102,38 @@ test {
             }
     systemProperties System.properties
 }
+
+// Separate maintained TestNG execution lane
+sourceSets {
+    maintainedTest {
+        java.srcDirs = ['src/maintainedTest/java']
+        resources.srcDirs = []
+    }
+}
+
+dependencies {
+    maintainedTestImplementation 'org.testng:testng:7.3.0'
+}
+
+tasks.register('maintainedTest', Test) {
+    group = 'verification'
+    description = 'Runs the maintained TestNG execution lane.'
+
+    testClassesDirs = sourceSets.maintainedTest.output.classesDirs
+    classpath = sourceSets.maintainedTest.runtimeClasspath
+
+    useTestNG()
+    ignoreFailures = false
+
+    systemProperty(
+            'integrityProbe',
+            project.findProperty('integrityProbe') ?: 'pass'
+    )
+
+    filter {
+        includeTestsMatching 'integrity.ExecutionIntegrityProbe'
+    }
+
+    maxParallelForks = 1
+    forkEvery = 0
+}
