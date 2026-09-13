@@ -1,12 +1,5 @@
 plugins {
     id 'java'
-    id "io.qameta.allure" version "2.8.1"
-}
-
-allure {
-    version = '2.8.1'
-    autoconfigure = false
-    aspectjweaver = true
 }
 
 group 'Test_Automation-automationpractice.com'
@@ -16,7 +9,6 @@ sourceCompatibility = JavaVersion.VERSION_14
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -104,6 +96,7 @@ test {
 }
 
 // Separate maintained TestNG execution lane
+def maintainedJavaVersion = JavaLanguageVersion.of(21)
 sourceSets {
     maintainedTest {
         java.srcDirs = ['src/maintainedTest/java']
@@ -112,7 +105,15 @@ sourceSets {
 }
 
 dependencies {
-    maintainedTestImplementation 'org.testng:testng:7.3.0'
+    maintainedTestImplementation 'org.testng:testng:7.12.0'
+}
+
+tasks.named('compileMaintainedTestJava', JavaCompile) {
+    javaCompiler = javaToolchains.compilerFor {
+        languageVersion = maintainedJavaVersion
+    }
+
+    options.release.set(21)
 }
 
 tasks.register('maintainedTest', Test) {
@@ -121,6 +122,9 @@ tasks.register('maintainedTest', Test) {
 
     testClassesDirs = sourceSets.maintainedTest.output.classesDirs
     classpath = sourceSets.maintainedTest.runtimeClasspath
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = maintainedJavaVersion
+    }
 
     useTestNG()
     ignoreFailures = false
