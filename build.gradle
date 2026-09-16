@@ -106,6 +106,7 @@ sourceSets {
 
 dependencies {
     maintainedTestImplementation 'org.testng:testng:7.12.0'
+    maintainedTestImplementation 'org.seleniumhq.selenium:selenium-java:4.49.0'
 }
 
 tasks.named('compileMaintainedTestJava', JavaCompile) {
@@ -140,4 +141,32 @@ tasks.register('maintainedTest', Test) {
 
     maxParallelForks = 1
     forkEvery = 0
+}
+
+tasks.register('automationReadiness', Test) {
+    group = 'verification'
+    description = 'Runs the isolated SauceDemo Selenium readiness check.'
+
+    dependsOn tasks.named('maintainedTestClasses')
+
+    testClassesDirs = sourceSets.maintainedTest.output.classesDirs
+    classpath = sourceSets.maintainedTest.runtimeClasspath
+
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = maintainedJavaVersion
+    }
+
+    useTestNG()
+    ignoreFailures = false
+    maxParallelForks = 1
+
+    filter {
+        includeTestsMatching 'readiness.SauceDemoReadinessSmokeTest'
+        failOnNoMatchingTests = true
+    }
+
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+        showStandardStreams = true
+    }
 }
