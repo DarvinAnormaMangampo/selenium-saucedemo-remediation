@@ -1,0 +1,7 @@
+def runId = new Date().format('yyyyMMdd-HHmmss-SSS')
+gradle.beforeProject { project ->
+    def output = project.layout.projectDirectory.dir("build/timestamped-runs/${runId}")
+    output.asFile.mkdirs()
+    project.layout.buildDirectory.set(output)
+    println "OUTPUT_DIR=${output.asFile}"
+}

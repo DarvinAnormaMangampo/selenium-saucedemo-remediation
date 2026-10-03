@@ -170,3 +170,45 @@ tasks.register('automationReadiness', Test) {
         showStandardStreams = true
     }
 }
+
+tasks.register('milestoneFAutomation', Test) {
+    group = 'verification'
+    description = 'Runs the six Milestone F Selenium workflows.'
+
+    dependsOn tasks.named('maintainedTestClasses')
+    testClassesDirs = sourceSets.maintainedTest.output.classesDirs
+    classpath = sourceSets.maintainedTest.runtimeClasspath
+
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = maintainedJavaVersion
+    }
+
+    useTestNG()
+    ignoreFailures = false
+    maxParallelForks = 1
+    forkEvery = 0
+
+    filter {
+        includeTestsMatching 'saucedemo.tests.AuthenticationTests'
+        includeTestsMatching 'saucedemo.tests.InventoryAndCartTests'
+        includeTestsMatching 'saucedemo.tests.CheckoutTests'
+        failOnNoMatchingTests = true
+    }
+
+    reports {
+        html.required.set(true)
+        junitXml.required.set(true)
+    }
+
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+    systemProperty(
+        'milestoneF.captureDir',
+        layout.buildDirectory.dir('screenshots/milestoneFAutomation')
+                .get().asFile.absolutePath
+    )
+}
