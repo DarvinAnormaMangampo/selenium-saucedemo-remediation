@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="saucedemo.tests.CheckoutTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-30T13:02:21.026Z" hostname="[local-host]" time="7.32">
+  <properties/>
+  <testcase name="autF04_firstNameIsRequired" classname="saucedemo.tests.CheckoutTests" time="1.722"/>
+  <testcase name="autF06_twoItemOrderCompletes" classname="saucedemo.tests.CheckoutTests" time="3.924"/>
+  <system-out><![CDATA[SCREENSHOT_EVIDENCE id=AUT-F04 outcome=successful-tests step=required-field error and page state url=https://www.saucedemo.com/checkout-step-one.html png=[repository]\build\timestamped-runs\20260930-210141-857\screenshots\milestoneFAutomation\successful-tests\AUT-F04\01-first-name-required.png
+PASS id=AUT-F04
+CHECKPOINT id=AUT-F06 step=sign in and check empty cart
+CHECKPOINT id=AUT-F06 step=capture prices and add two products
+CHECKPOINT id=AUT-F06 step=check Cart entries
+CHECKPOINT id=AUT-F06 step=enter checkout details
+CHECKPOINT id=AUT-F06 step=check Overview entries
+CHECKPOINT id=AUT-F06 step=reconcile Overview amounts
+AMOUNTS id=AUT-F06 itemTotal=39.98 tax=3.20 total=43.18
+CHECKPOINT id=AUT-F06 step=finish order
+CHECKPOINT id=AUT-F06 step=check completion and PDF control
+SCREENSHOT_EVIDENCE id=AUT-F06 outcome=successful-tests step=reconcile Overview amounts url=https://www.saucedemo.com/checkout-step-two.html png=[repository]\build\timestamped-runs\20260930-210141-857\screenshots\milestoneFAutomation\successful-tests\AUT-F06\01-overview-amounts.png
+SCREENSHOT_EVIDENCE id=AUT-F06 outcome=successful-tests step=check completion and PDF control url=https://www.saucedemo.com/checkout-complete.html png=[repository]\build\timestamped-runs\20260930-210141-857\screenshots\milestoneFAutomation\successful-tests\AUT-F06\02-order-complete.png
+PASS id=AUT-F06
+]]></system-out>
+  <system-err><![CDATA[Sep 30, 2026 9:02:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+Sep 30, 2026 9:02:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+]]></system-err>
+</testsuite>
