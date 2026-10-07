@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="saucedemo.tests.InventoryAndCartTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-05T13:47:27.042Z" hostname="[local-host]" time="6.302">
+  <properties/>
+  <testcase name="autF03_twoItemCartAndRemovals" classname="saucedemo.tests.InventoryAndCartTests" time="2.497"/>
+  <testcase name="autF05_pricesSortLowToHigh" classname="saucedemo.tests.InventoryAndCartTests" time="1.353"/>
+  <system-out><![CDATA[SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=check both cart entries url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\01-cart-two-items.png
+SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=remove Backpack in Cart url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\02-cart-one-item.png
+SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=remove Bike Light on Products url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\03-products-after-removal.png
+SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=reopen empty cart url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\04-cart-empty.png
+PASS id=AUT-F03
+CHECKPOINT id=AUT-F05 step=sign in and inspect product prices
+CHECKPOINT id=AUT-F05 step=select price low to high
+CHECKPOINT id=AUT-F05 step=parse displayed prices in order
+CHECKPOINT id=AUT-F05 step=compare each adjacent price
+SCREENSHOT_EVIDENCE id=AUT-F05 outcome=successful-tests step=compare each adjacent price url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F05\01-prices-low-to-high.png
+PASS id=AUT-F05
+]]></system-out>
+  <system-err><![CDATA[Oct 05, 2026 9:47:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+Oct 05, 2026 9:47:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+]]></system-err>
+</testsuite>

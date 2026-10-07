@@ -1,0 +1,153 @@
+PS [repository]> .\gradlew.bat --init-script .\gradle\timestamped-build.init.gradle automationReadiness milestoneFAutomation --rerun-tasks --no-build-cache --no-daemon --console=plain
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+
+> Configure project :
+OUTPUT_DIR=[repository]\build\timestamped-runs\20261005-214636-568
+
+> Task :compileMaintainedTestJava
+> Task :processMaintainedTestResources NO-SOURCE
+> Task :maintainedTestClasses
+
+> Task :automationReadiness
+
+Gradle Test Executor 1 STANDARD_ERROR
+    SLF4J(W): No SLF4J providers were found.
+    SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+    SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+
+Gradle suite > Gradle test > readiness.SauceDemoReadinessSmokeTest > confirmsSauceDemoLoginPageIsAutomationReady STANDARD_ERROR
+    Oct 05, 2026 9:46:46 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > readiness.SauceDemoReadinessSmokeTest > confirmsSauceDemoLoginPageIsAutomationReady STANDARD_OUT
+    Browser: chrome
+    Browser version: 154.0.8037.98
+    Driver version: 154.0.8037.92 (334b65d254ccc35df4fca82706d1753227b01039-refs/branch-heads/8037@{#1589})
+
+Gradle suite > Gradle test > readiness.SauceDemoReadinessSmokeTest > confirmsSauceDemoLoginPageIsAutomationReady PASSED
+
+> Task :milestoneFAutomation
+
+Gradle Test Executor 2 STANDARD_ERROR
+    SLF4J(W): No SLF4J providers were found.
+    SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+    SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests STANDARD_ERROR
+    Oct 05, 2026 9:46:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests > autF01_standardLoginShowsInventory STANDARD_OUT
+    CHECKPOINT id=AUT-F01 step=submit standard login
+    CHECKPOINT id=AUT-F01 step=Products page and inventory
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests > autF01_standardLoginShowsInventory PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F01 outcome=successful-tests step=Products page and inventory url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F01\01-products-inventory.png
+    PASS id=AUT-F01
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests STANDARD_ERROR
+    Oct 05, 2026 9:46:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests > autF02_lockedOutLoginIsRejected STANDARD_OUT
+    CHECKPOINT id=AUT-F02 step=submit locked-out login
+    CHECKPOINT id=AUT-F02 step=rejection and sign-in state
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests > autF02_lockedOutLoginIsRejected PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.AuthenticationTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F02 outcome=successful-tests step=rejection and sign-in state url=https://www.saucedemo.com/ png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F02\01-locked-out-error.png
+    PASS id=AUT-F02
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests STANDARD_ERROR
+    Oct 05, 2026 9:46:56 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests > autF04_firstNameIsRequired STANDARD_OUT
+    CHECKPOINT id=AUT-F04 step=sign in and check empty cart
+    CHECKPOINT id=AUT-F04 step=add Backpack and open checkout
+    CHECKPOINT id=AUT-F04 step=submit with First Name blank
+    CHECKPOINT id=AUT-F04 step=required-field error and page state
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests > autF04_firstNameIsRequired PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F04 outcome=successful-tests step=required-field error and page state url=https://www.saucedemo.com/checkout-step-one.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F04\01-first-name-required.png
+    PASS id=AUT-F04
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests STANDARD_ERROR
+    Oct 05, 2026 9:47:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests > autF06_twoItemOrderCompletes STANDARD_OUT
+    CHECKPOINT id=AUT-F06 step=sign in and check empty cart
+    CHECKPOINT id=AUT-F06 step=capture prices and add two products
+    CHECKPOINT id=AUT-F06 step=check Cart entries
+    CHECKPOINT id=AUT-F06 step=enter checkout details
+    CHECKPOINT id=AUT-F06 step=check Overview entries
+    CHECKPOINT id=AUT-F06 step=reconcile Overview amounts
+    AMOUNTS id=AUT-F06 itemTotal=39.98 tax=3.20 total=43.18
+    CHECKPOINT id=AUT-F06 step=finish order
+    CHECKPOINT id=AUT-F06 step=check completion and PDF control
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests > autF06_twoItemOrderCompletes PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.CheckoutTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F06 outcome=successful-tests step=reconcile Overview amounts url=https://www.saucedemo.com/checkout-step-two.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F06\01-overview-amounts.png
+    SCREENSHOT_EVIDENCE id=AUT-F06 outcome=successful-tests step=check completion and PDF control url=https://www.saucedemo.com/checkout-complete.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F06\02-order-complete.png
+    PASS id=AUT-F06
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests STANDARD_ERROR
+    Oct 05, 2026 9:47:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests > autF03_twoItemCartAndRemovals STANDARD_OUT
+    CHECKPOINT id=AUT-F03 step=sign in and check empty cart
+    CHECKPOINT id=AUT-F03 step=capture current product prices
+    CHECKPOINT id=AUT-F03 step=add both products
+    CHECKPOINT id=AUT-F03 step=check both cart entries
+    CHECKPOINT id=AUT-F03 step=remove Backpack in Cart
+    CHECKPOINT id=AUT-F03 step=remove Bike Light on Products
+    CHECKPOINT id=AUT-F03 step=reopen empty cart
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests > autF03_twoItemCartAndRemovals PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=check both cart entries url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\01-cart-two-items.png
+    SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=remove Backpack in Cart url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\02-cart-one-item.png
+    SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=remove Bike Light on Products url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\03-products-after-removal.png
+    SCREENSHOT_EVIDENCE id=AUT-F03 outcome=successful-tests step=reopen empty cart url=https://www.saucedemo.com/cart.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F03\04-cart-empty.png
+    PASS id=AUT-F03
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests STANDARD_ERROR
+    Oct 05, 2026 9:47:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests > autF05_pricesSortLowToHigh STANDARD_OUT
+    CHECKPOINT id=AUT-F05 step=sign in and inspect product prices
+    CHECKPOINT id=AUT-F05 step=select price low to high
+    CHECKPOINT id=AUT-F05 step=parse displayed prices in order
+    CHECKPOINT id=AUT-F05 step=compare each adjacent price
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests > autF05_pricesSortLowToHigh PASSED
+
+Gradle suite > Gradle test > saucedemo.tests.InventoryAndCartTests STANDARD_OUT
+    SCREENSHOT_EVIDENCE id=AUT-F05 outcome=successful-tests step=compare each adjacent price url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F05\01-prices-low-to-high.png
+    PASS id=AUT-F05
+
+[Incubating] Problems report is available at: repo:/build/timestamped-runs/20261005-214636-568/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 3s
+3 actionable tasks: 3 executed
+PS [repository]> $runExit = $LASTEXITCODE
+PS [repository]> "RUN_EXIT_CODE=$runExit"
+RUN_EXIT_CODE=0

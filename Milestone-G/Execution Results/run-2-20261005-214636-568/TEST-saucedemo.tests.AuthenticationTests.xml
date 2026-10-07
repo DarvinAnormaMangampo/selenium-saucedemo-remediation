@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="saucedemo.tests.AuthenticationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-05T13:46:51.720Z" hostname="[local-host]" time="3.437">
+  <properties/>
+  <testcase name="autF01_standardLoginShowsInventory" classname="saucedemo.tests.AuthenticationTests" time="0.905"/>
+  <testcase name="autF02_lockedOutLoginIsRejected" classname="saucedemo.tests.AuthenticationTests" time="0.643"/>
+  <system-out><![CDATA[SCREENSHOT_EVIDENCE id=AUT-F01 outcome=successful-tests step=Products page and inventory url=https://www.saucedemo.com/inventory.html png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F01\01-products-inventory.png
+PASS id=AUT-F01
+CHECKPOINT id=AUT-F02 step=submit locked-out login
+CHECKPOINT id=AUT-F02 step=rejection and sign-in state
+SCREENSHOT_EVIDENCE id=AUT-F02 outcome=successful-tests step=rejection and sign-in state url=https://www.saucedemo.com/ png=[repository]\build\timestamped-runs\20261005-214636-568\screenshots\milestoneFAutomation\successful-tests\AUT-F02\01-locked-out-error.png
+PASS id=AUT-F02
+]]></system-out>
+  <system-err><![CDATA[Oct 05, 2026 9:46:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+Oct 05, 2026 9:46:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+]]></system-err>
+</testsuite>

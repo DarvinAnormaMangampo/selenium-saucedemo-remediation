@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="readiness.SauceDemoReadinessSmokeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-05T13:46:44.362Z" hostname="[local-host]" time="3.607">
+  <properties/>
+  <testcase name="confirmsSauceDemoLoginPageIsAutomationReady" classname="readiness.SauceDemoReadinessSmokeTest" time="3.607"/>
+  <system-out><![CDATA[Browser: chrome
+Browser version: 154.0.8037.98
+Driver version: 154.0.8037.92 (334b65d254ccc35df4fca82706d1753227b01039-refs/branch-heads/8037@{#1589})
+]]></system-out>
+  <system-err><![CDATA[Oct 05, 2026 9:46:46 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 154, returning the closest version; found: 153; Please update to a Selenium version that supports CDP version 154
+]]></system-err>
+</testsuite>
