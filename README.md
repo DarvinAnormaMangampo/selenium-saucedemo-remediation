@@ -1,104 +1,59 @@
-![IMG](https://raw.githubusercontent.com/kamil-nowocin/Test_Automation-automationpractice/master/src/test/resources/files/images/readme_banner.jpg)
-![JAVA](https://img.shields.io/badge/language-java-critical?style=flat-square)
-![ALLURE](https://img.shields.io/badge/Allure%20Report-2.8.1-orange.svg?style=flat-square)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/travis/kamil-nowocin/Test_Automation-automationpractice/master.svg?style=flat-square)](https://travis-ci.com/kamil-nowocin/Test_Automation-automationpractice)
-![GitHub last commit](https://img.shields.io/github/last-commit/kamil-nowocin/Test_Automation-automationpractice?style=flat-square)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/kamil-nowocin/Test_Automation-automationpractice?style=flat-square)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/kamil-nowocin/Test_Automation-automationpractice?style=flat-square)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://linkedin.com/in/kamil-nowocin)
-# Test automation - http://www.automationpractice.com
-**Design Pattern:** Page Object Model with loadable components<sub><sup>(POC)</sub></sup> & AAA  
-**Following tools were used in this framework:**  
-Java, Selenium, TestNG, Cucumber, REST Assured, Gradle, Travis CI, Allure Reports, Slack API, SeleniumGrid, WebDriverManager, Faker & MockNeat, BrowserStack, GitHub Pages
-  * [About project](#about-project)
-  * [Features](#features)
-  * [How to run tests](#how-to-run-tests)
-    + [TestNG](#testng)
-    + [Cucumber](#cucumber)
-  * [Test results & Test logs](#test-results--test-logs)
-    + [CI/CD](#cicd)
-    + [Localhost](#localhost)
-    + [TestNG & Cucumber](#testng--cucumber)
-  * [Logger (Slack Bot)](#logger-slack-bot)
-    + [CI/CD](#cicd-1)
-    + [Localhost](#localhost-1)
-  * [SeleniumGrid](#selenium-grid-poc)
-    + [CI/CD](#cicd-2)
-    + [Localhost](#localhost-2)
-    + [How to run tests](#how-to-run-tests-1)
-  * [Authors](#authors)
-  * [License](#license)
-## ABOUT PROJECT
-Project made in my spare time to develop my skills in automation testing.  
-You don't have to download any WebDrivers - I'm using WebDriverManager, drivers will be downloaded by gradle.  
-Supported tests executors:
-- *Chrome*
-- *Firefox*
-- *Opera*
-- *Safari*
-- *Edge*
-- *Internet Explorer*
-- *SeleniumGrid*
-- *BrowserStack*
-## FEATURES
-- Support for Allure Report
-- Support for Slack Bot
-- Support for SeleniumGrid
-- Support for Parallel Testing
-- Support for BrowserStack
-- Support for WebDriverManager
-- Support for Fake & Mock data
-- Support for .xlsx files
-## HOW TO RUN TESTS
-There are multiple ways to run tests from this build. It all depends on what do you want to do:
-### TestNG
-- Right click on `TestNG.xml` file, and Run ->  This will run all tests attached to specific xml runner
-- In terminal type `./gradlew test` -> This will run all tests from tests package.`(src/test/java/tests)`  
-You can add some environment settings, before you run tests, e.g:
-   - `-Dtests.executor="YOUR_HOST_NAME"` -> available hosts: Chrome, Firefox, Opera, Safari, Edge, IE, Safari, GRID, BrowserStack   
-  <sub>_**This is the best option to run tests, all tools, features are working well while running tests via this commend**_</sub>
-### Cucumber
-- Right click on `.feature` file, and Run -> This will run `.feature` file on default settings
-- In terminal type `./gradlew cucumber` -> This will run all `.feature` files on default settings  
-You can add some environment settings, before you run tests, e.g:
-   - `-Dtests.executor="YOUR_HOST_NAME"` -> available hosts: Chrome, Firefox, Opera, Safari, Edge, IE, Safari, GRID, BrowserStack
-- In terminal type `./gradlew cucumber -Dcucumber.filter.tags="@YOUR_TAG"` -> This will run all `.feature` scenarios which provided tag
-- Right click on `CucumberRunner` file, and Run -> This will run all `.feature` files on default settings
-  - <sub><sup>*This is highly unrecommended option since it's an experimental file and doesn't work well, check build.gradle for more information*</sup></sub>
-- Create your own runner :hammer_and_wrench:
-## TEST RESULTS & TEST LOGS
-### CI/CD
-After each CI/CD cycle run, tests results will be automatically uploaded to [kamil_nowocin.github.io/Test_Automation](https://kamil-nowocin.github.io/Test_Automation-automationpractice/)
-### Localhost
-After each LOCAL cycle run two types of log information are saved inside repository, together with tests results
-### TestNG & Cucumber
-- Detailed logs in logs directory
-- Colorful logs in testdata.xlsx file
-- Allure HTML report in build/allure-results directory
+# SauceDemo Testing in an inherited Selenium Repository
 
-In terminal type `allure generate build/allure-results --clean` to generate Allure tests results   
-<sub><sup>*Allure tests results available for running tests via: CucumberRunner, `./gradlew test` or TestMethod with annotation @Test (src/test/java/tests)*</sup></sub>
-![Imgur](https://raw.githubusercontent.com/kamil-nowocin/Test_Automation-automationpractice/master/src/test/resources/files/images/allure_gif.gif)
-## LOGGER (Slack Bot)
-### CI/CD
-You are able to see real time summary of TestNG suite execution on [Slack workspace](https://testautomation-travis.slack.com)
-### Localhost
-Not available
+## Project context
 
-| FAIL MESSAGE  | PASS MESSAGE  |
-| ------------- | ------------- |
-| ![IMG](https://raw.githubusercontent.com/kamil-nowocin/Test_Automation-automationpractice/master/src/test/resources/files/images/slack_bot_fail.png)  | ![IMG](https://raw.githubusercontent.com/kamil-nowocin/Test_Automation-automationpractice/master/src/test/resources/files/images/slack_bot_pass.png)  |
-## SELENIUM GRID (POC)
-### CI/CD
-Not available
-### Localhost
-Right now it's only available for a local host, and **it's POC feature**, however you are able to check how it works
-### HOW TO RUN TESTS
-1. Run SeleniumGridRunner
-2. Make sure that SeleniumGrid is running properly, check http://localhost:4444/grid/console
-3. In terminal type `./gradlew test -Dtests.executor=grid -Dremote.browser="YOUR_REMOTE_BROWSER"`
-## AUTHORS
-- **Kamil Nowocin** - *Initial work* - [Kamil Nowocin](https://github.com/kamil-nowocin)
-## LICENSE
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This fork keeps [Kamil Nowocin's AutomationPractice project](https://github.com/kamil-nowocin/Test_Automation-automationpractice). My earlier Java Selenium work involved maintaining and improving existing automation. I could not use client applications in a public portfolio, so I chose this older public repository as a starting point. Its tests targeted AutomationPractice, but that website was not a usable target for this work. I kept the repository's history and used SauceDemo for new manual checks and automated workflows.
+
+I addressed build and execution issues in the inherited repository. I updated its existing Gradle configuration and wrapper, which are shared project files, and added a separate `maintainedTest` source set for SauceDemo. The new lane runs through that updated build but uses its own test classes and dependencies. Selected manual SauceDemo results became the basis for the new Selenium scripts. This work involved maintaining an existing automation project as well as developing new tests. The original AutomationPractice suite remains in the repository, but its tests and helpers were not used for the SauceDemo results.
+
+## Results at a glance
+
+| Milestone | Work and date | Outcome |
+| --- | --- | --- |
+| E | Prepared cases and test data, then manually checked 19 SauceDemo variations across nine case groups in Firefox on 22 September 2026. | All 19 passed on the first documented attempt. The execution workbook links each result to its expected outcome and evidence. |
+| F | Developed six Selenium workflows from selected E outcomes and ran them in Chrome on 30 September 2026. | All six F tests passed in the verified run, along with the separate Milestone-D readiness method. Gradle returned exit code `0`, indicating successful command completion. |
+| G | Repeated those six methods and the readiness method three times on 5 October 2026, using the same published repository commit. | The three commands produced 21 first-attempt passes. The XML has no failed or skipped methods, and none of the seven was missing. Neither protected workbook changed. |
+
+Milestone-A examined the inherited repository. Gradle could not resolve the dependencies needed to compile its original tests, so none of those tests ran. The inherited setup also had retry code and an Excel listener that could write to a tracked workbook. In Milestone-B, I set up a separate TestNG lane without that retry code. This meant a later retry could not hide a failed first attempt. I made a test assertion fail on purpose and confirmed that Gradle reported the task as failed. Milestone-C made that maintained lane build with Java 21 and Gradle 8.14.5. Milestone-D added a Chrome check of the SauceDemo login page without signing in. Milestone-F and Milestone-G later used this maintained lane for their runs.
+
+The Milestone-F workflows follow a short shopping path and include two visible error responses. They use selected Milestone-E outcomes rather than all 19 manual variations. An earlier Milestone-F diagnostic deliberately used wrong expectations. All six tests failed, the task exited `1`, and failure screenshots were saved. I removed those temporary changes before the verified passing run. The [F source checksum file](./Milestone-F/Evidence/tested-source-sha256.md) identifies the tested files because the source was uncommitted at run time. Milestone-G then used the [published F repository commit](https://github.com/DarvinAnormaMangampo/selenium-saucedemo-remediation/commit/5a4a02378360805f8a2aed6ac22243d58e9eb6c3) for all three repeat runs. No method changed outcome in those runs.
+
+## Run the maintained checks
+
+The published Milestone-F and Milestone-G runs used Windows 11, Java 21, Chrome and the Gradle 8.14.5 wrapper. Set `JAVA_HOME` to a JDK 21 installation. From the repository root in PowerShell, run:
+
+```powershell
+.\gradlew.bat --init-script .\gradle\timestamped-build.init.gradle automationReadiness milestoneFAutomation --rerun-tasks --no-build-cache --no-daemon --console=plain
+```
+
+`automationReadiness` checks that the login page is ready without signing in. `milestoneFAutomation` selects AUT-F01 through AUT-F06 from the maintained source set. Both tasks fail if no test matches or an executed test fails. The forced-run flags prevent Gradle from reusing earlier task results. Selenium Manager resolves ChromeDriver. Gradle prints `OUTPUT_DIR` for the new timestamped folder. The JUnit-style XML in that folder lists which methods ran and their outcomes. Check the XML alongside the command's exit code. The inherited `test` task runs a different suite. Use the two named tasks above for the Milestone-F and Milestone-G checks.
+
+## Milestone documents
+
+| Milestone | What it shows | README | Report |
+| --- | --- | --- | --- |
+| A | Inherited baseline and execution findings | [README](./Milestone-A/README.md) | [PDF](./Milestone-A/Milestone-A%20Baseline%20Assessment.pdf) |
+| B | Separate TestNG lane and failure reporting | [README](./Milestone-B/README.md) | [PDF](./Milestone-B/Milestone-B%20Automation%20Execution%20Integrity.pdf) |
+| C | Build restoration for the maintained lane | [README](./Milestone-C/README.md) | [PDF](./Milestone-C/Milestone-C%20Build%20Restoration.pdf) |
+| D | Chrome login-page readiness | [README](./Milestone-D/README.md) | [PDF](./Milestone-D/Milestone-D%20Automation%20Readiness.pdf) |
+| E | Manual cases, results and evidence | [README](./Milestone-E/README.md) | [PDF](./Milestone-E/Milestone-E%20Manual%20Testing.pdf) |
+| F | Six automated workflows and failure diagnostic | [README](./Milestone-F/README.md) | [PDF](./Milestone-F/Milestone-F%20Test%20Automation.pdf) |
+| G | Three repeat runs and result analysis | [README](./Milestone-G/README.md) | [PDF](./Milestone-G/Milestone-G%20Repeat%20Runs%20and%20Result%20Analysis.pdf) |
+
+## Origin and contributions
+
+The [baseline tag](https://github.com/DarvinAnormaMangampo/selenium-saucedemo-remediation/tree/inherited-baseline-2026-09-05) preserves the inherited starting point. The [baseline-to-current comparison](https://github.com/DarvinAnormaMangampo/selenium-saucedemo-remediation/compare/inherited-baseline-2026-09-05...master) shows this fork's changes. The original project remains credited to Kamil Nowocin under its [MIT licence](./LICENSE.md).
+
+| Origin | What is in this repository |
+| --- | --- |
+| Inherited | AutomationPractice source and the original Gradle project. Its older tests were not used to produce the SauceDemo results. |
+| Changed in this fork | I updated `.gitignore` to track approved evidence formats. I also updated the shared Gradle build and wrapper for the separate `maintainedTest` source set and its strict TestNG tasks. The original AutomationPractice test source was left in place. |
+| Added in this fork | The Chrome readiness method and Milestone-E's manual cases, results and evidence. Milestone-F added SauceDemo tests with page classes. Its init script separates run output by timestamp. Milestone-G added the repeat-run evidence. The maintained Java source is under [`src/maintainedTest/java/`](./src/maintainedTest/java/). |
+
+The inherited `.travis.yml` names the older `test` task, and `.travis/deploy.sh` points to an upstream report page. The maintained command above does not invoke either file.
+
+## Coverage and limits
+
+Milestone-E's cases used public SauceDemo information and visible page responses. For prices and totals, I compared values from the same manual run. Milestone-E manually generated and checked a PDF order receipt. Milestone-F's AUT-F06 stopped at the completion page and checked that its PDF control was visible. The test did not generate a receipt. Eleven of Milestone-E's variations were not included in Milestone-F's six workflows.
+
+Milestone-E ran in Firefox. The Milestone-D, Milestone-F and Milestone-G automation evidence comes from Chrome on one Windows machine. Milestone-G's commands had gaps between their start times. They show matching first-attempt outcomes on 5 October 2026. These results cover the executed methods on those dates. They do not cover the whole SauceDemo site, a second automation browser or the inherited AutomationPractice suite. Client approval and release decisions were outside these activities.
