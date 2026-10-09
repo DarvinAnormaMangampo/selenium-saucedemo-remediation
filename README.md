@@ -39,6 +39,7 @@ The published Milestone-F and Milestone-G runs used Windows 11, Java 21, Chrome 
 | E | Manual cases, results and evidence | [README](./Milestone-E/README.md) | [PDF](./Milestone-E/Milestone-E%20Manual%20Testing.pdf) |
 | F | Six automated workflows and failure diagnostic | [README](./Milestone-F/README.md) | [PDF](./Milestone-F/Milestone-F%20Test%20Automation.pdf) |
 | G | Three repeat runs and result analysis | [README](./Milestone-G/README.md) | [PDF](./Milestone-G/Milestone-G%20Repeat%20Runs%20and%20Result%20Analysis.pdf) |
+| H | Fresh-clone verification and public access check | [README](./Milestone-H/README.md) | [PDF](./Milestone-H/Milestone-H%20Repository%20Publication%20and%20Test%20Evidence%20Verification.pdf) |
 
 ## Origin and contributions
 
